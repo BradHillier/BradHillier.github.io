@@ -1,40 +1,52 @@
+import { useRef, useState, useEffect, createContext } from 'react'
 import NavigationBar from './nav.js';
 import Home from './home.js';
 import Interests from './interests.js';
 import About from './about.js';
-import Projects from './projects.js';
+import Projects, { ProjectTitle } from './projects.js';
 import Contact from './contact.js';
+import Section from './section.js';
+import Footer from './footer.js';
 import './App.css';
 
 
-function App() {
+
+export const ScrollContext = createContext();
+
+const App = () => {
+
+
+  
+
 
   return (
     <div className="App">
-
       <NavigationBar />
 
       <main>
-        <section id="home" className="bg-light py-5"> 
-          <Home /> 
-        </section>
+          <Section id="home" className="bg-light">
+            <Home />
+          </Section>
 
-        <section id="interests" className="bg-white py-5"> 
-          <Interests /> 
-        </section>
+          <Section id="interests" title="Areas of Interest">
+            <Interests />
+          </Section>
 
-        <section id="about" className="bg-white py-5"> 
-          <About /> 
-        </section>
+          <Section id="about">
+            <About /> 
+          </Section>
 
-        <section id="projects" className="bg-white py-5"> 
-          <Projects /> 
-        </section>
+          <Section id="projects" className="bg-light">
+            <ProjectTitle />
+            <Projects /> 
+          </Section>
 
-        <section id="contact" className="bg-white py-5"> 
-          <Contact /> 
-        </section>
+          <Section id="contact">
+            <Contact /> 
+          </Section>
       </main>
+
+      <Footer />
 
     </div>
   );

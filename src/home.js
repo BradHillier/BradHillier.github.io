@@ -8,7 +8,9 @@ import Button from 'react-bootstrap/Button';
 const Home = () => {
 
     const adjustScroll = event => {
-        const link_target = document.querySelector('#contact')
+        const link_target = document.querySelector('#contact');
+
+        // The height of the navbar
         link_target.style.scrollMarginTop = '50px';
     }
 
