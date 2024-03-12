@@ -1,22 +1,3 @@
-@keyframes appear-below {
-    from { 
-        transform: translateY(40%);
-        opacity: 0;
-    }
-    to { 
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
-
-.visible {
-    animation-name: appear-below;
-}
-
-.hidden {
-    opacity: 0%;
-}
-
 .project img {
     display: block;
     height: auto;
