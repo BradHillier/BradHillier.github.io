@@ -1,4 +1,3 @@
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
@@ -53,7 +52,7 @@ const Projects = () => {
     return (
         <Row className="d-flex">
             {projects.map(project => (
-                <Col className="project" sm={6} md={6} lg={3} key={`project-${count++}`}>
+                <Col className="project mb-4" sm={6} md={6} lg={3} key={`project-${count++}`}>
                     <Card className="shadow-sm mb-4 h-100">
                         <div class="imgContainer">
                             <Card.Img className="overflow-hidden" variant="top" src={project.img} />
@@ -64,7 +63,6 @@ const Projects = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-
             ))}
         </Row>
     );
