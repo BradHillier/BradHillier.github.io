@@ -1,6 +1,6 @@
-import Section from './../section';
-import SlideInTitle from './../slideInTitle';
-import AnimatedRow from './../animatedRow';
+import Section from './../common/section';
+import SlideInTitle from './../common/slideInTitle';
+import AnimatedRow from './../common/animatedRow';
 import Interest from './interest.js';
 import interests from './interests.json';
 
