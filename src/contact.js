@@ -51,7 +51,7 @@ const ContactForm = () => {
             </Form.Group>
 
             <div className="d-flex justify-content-center">
-                <Button className="px-5 py-3 my-4" type="submit">Submit</Button>
+                <Button size="lg" className="my-4" type="submit">Submit</Button>
             </div>
         </Form>
     )
