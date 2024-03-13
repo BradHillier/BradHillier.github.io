@@ -1,4 +1,3 @@
-import { useRef, useState, useEffect, createContext } from 'react'
 import NavigationBar from './nav.js';
 import Home from './home.js';
 import Interests from './interests.js';
@@ -12,40 +11,37 @@ import './App.css';
 
 
 
-export const ScrollContext = createContext();
 
 const App = () => {
-
-
-  
-
-
   return (
     <div className="App">
+
       <NavigationBar />
 
       <main>
-          <Section id="home" className="bg-light">
-            <Home />
-          </Section>
+        <Section id="home" className="bg-light">
+          <Home />
+        </Section>
 
-          <Section id="interests">
+        <Section id="interests">
+          <div className="pb-4">
             <SlideInTitle title="Areas of Interest" />
-            <Interests />
-          </Section>
+          </div>
+          <Interests />
+        </Section>
 
-          <Section id="about">
-            <About /> 
-          </Section>
+        <Section id="about">
+          <About />
+        </Section>
 
-          <Section id="projects" className="bg-light">
-            <ProjectTitle />
-            <Projects /> 
-          </Section>
+        <Section id="projects" className="bg-light">
+          <ProjectTitle />
+          <Projects />
+        </Section>
 
-          <Section id="contact">
-            <Contact /> 
-          </Section>
+        <Section id="contact">
+          <Contact />
+        </Section>
       </main>
 
       <Footer />
