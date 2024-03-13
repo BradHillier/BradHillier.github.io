@@ -1,20 +1,15 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import AnimatedRow from './animatedRow';
+
 import Card from 'react-bootstrap/Card';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faNetworkWired } from '@fortawesome/free-solid-svg-icons'
-import { faServer } from '@fortawesome/free-solid-svg-icons'
-import { faMicrochip } from '@fortawesome/free-solid-svg-icons'
-import { motion } from 'framer-motion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faNetworkWired } from '@fortawesome/free-solid-svg-icons';
+import { faServer } from '@fortawesome/free-solid-svg-icons';
+import { faMicrochip } from '@fortawesome/free-solid-svg-icons';
 
 
-
-
-const Interest = ({ icon, title, body, index }) => {
-
+const Interest = ({ icon, title, body }) => {
     return (
-        <Card className="border-0 bg-light">
+        <Card className = "border-0 bg-light" >
             <Card.Header className="bg-light border-bottom-0 mt-2">
                 <FontAwesomeIcon
                     className="fa-xl fa-fw text-primary bg-white p-2 rounded shadow-sm"
@@ -28,7 +23,7 @@ const Interest = ({ icon, title, body, index }) => {
                     {body}
                 </Card.Text>
             </Card.Body>
-        </Card>
+        </Card >
     );
 }
 
@@ -52,36 +47,17 @@ const Interests = () => {
             body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         }
     ]
-    const container = {
-        show: {
-            transition: {
-                delay: 0.5,
-                ease: "easeInOut",
-                delayChildren: 0.1,
-                staggerChildren: 0.1
-            }
-        }
-    }
-
-    const item = {
-        hidden: { opacity: 0, transform: "translateY(40%)" },
-        show: { opacity: 1, transform: "translateY(0)" }
-    }
 
     return (
-        <motion.div className="row"
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-        >
+        <AnimatedRow>
             {interests.map((area, index) => (
-                <motion.div className="col-md-4"
-                    variants={item}
-                >
-                    <Interest index={index} icon={area.icon} title={area.title} body={area.body} />
-                </motion.div>
+                <Interest
+                    icon={area.icon}
+                    title={area.title}
+                    body={area.body}
+                />
             ))}
-        </motion.div>
+        </AnimatedRow>
     );
 }
 

@@ -7,6 +7,7 @@ import Projects, { ProjectTitle } from './projects.js';
 import Contact from './contact.js';
 import Section from './section.js';
 import Footer from './footer.js';
+import SlideInTitle from './slideInTitle.js';
 import './App.css';
 
 
@@ -28,7 +29,8 @@ const App = () => {
             <Home />
           </Section>
 
-          <Section id="interests" title="Areas of Interest">
+          <Section id="interests">
+            <SlideInTitle title="Areas of Interest" />
             <Interests />
           </Section>
 
