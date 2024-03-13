@@ -8,7 +8,7 @@ const About = () => {
     return (
         <Container>
             <Row className="align-items-center">
-                <Col md={4}>
+                <Col md={4} className="mb-5">
                     <Image src="https://cdn.pixabay.com/photo/2017/02/23/13/05/avatar-2092113_1280.png" fluid />
                 </Col>
                 <Col md={8}>
