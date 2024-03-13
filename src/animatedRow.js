@@ -26,6 +26,7 @@ const AnimatedRow = ({ children }) => {
             variants={container}
             initial="hidden"
             whileInView="show"
+            viewport={{ once: true }}
         >
             {Children.map(children, child =>
                 <motion.div className="col-md-4" variants={item}>
