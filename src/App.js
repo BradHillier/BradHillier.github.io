@@ -1,12 +1,11 @@
 import NavigationBar from './nav.js';
 import Home from './home.js';
-import Interests from './interests.js';
+import Interests from './interests/interests.js';
 import About from './about.js';
 import Projects, { ProjectTitle } from './projects.js';
 import Contact from './contact.js';
 import Section from './section.js';
 import Footer from './footer.js';
-import SlideInTitle from './slideInTitle.js';
 import './App.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -26,12 +25,7 @@ const App = () => {
           <Home />
         </Section>
 
-        <Section id="interests">
-          <div className="pb-4">
-            <SlideInTitle title="Areas of Interest" />
-          </div>
-          <Interests />
-        </Section>
+        <Interests />
 
         <Section id="about">
           <About />

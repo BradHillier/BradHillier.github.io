@@ -1,6 +1,3 @@
-import AnimatedRow from './animatedRow';
-import interests from './interests.json';
-
 import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -23,21 +20,6 @@ const Interest = ({ icon, title, body }) => {
             </Card.Body>
         </Card >
     );
-}
+};
 
-
-const Interests = () => {
-    return (
-        <AnimatedRow>
-            {interests.map((area, index) => (
-                <Interest
-                    icon={area.icon}
-                    title={area.title}
-                    body={area.body}
-                />
-            ))}
-        </AnimatedRow>
-    );
-}
-
-export default Interests;
+export default Interest;
