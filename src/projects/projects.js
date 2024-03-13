@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+import projects from './projects.json';
+
 
 export const ProjectTitle = () => {
     return (
@@ -23,49 +25,38 @@ export const ProjectTitle = () => {
     );
 }
 
-const Projects = () => {
-
-    const projects = [
-        {
-            img: "crm_api.png",
-            title: "Customer Relationship Management API",
-            description: "A robust back-end server designed to efficiently manage and organize the customer and rental data of a small business, written in Python using the Flask framework"
-        },
-        {
-            img: "https://github.com/BradHillier/Morning-Meeting-Generator/raw/master/img/screenshots/meeting_document_screenshot.png",
-            title: "Meeting ",
-            description: "Brick breaker is a game inspired by atari's Breakout. I wrote it in Python utilizng the Pygame library. The game's goal is to destroy all the bricks on the screen by repeatedly bouncing a ball off a paddle into them."
-        },
-        {
-            img: "reminders.png",
-            title: "Apple Reminders Clone",
-            description: "A web application emulating key features of iOS reminders built using React and Redux."
-        },
-        {
-            img: "chess.png",
-            title: "Pixel Chess",
-            description: "A web application emulating key features of iOS reminders built using React and Redux."
-        }
-    ]
-
-    let count = 0;
-
+const Project = ({ image, title, description }) => {
     return (
-        <Row className="d-flex">
-            {projects.map(project => (
-                <Col className="project mb-4" sm={6} md={6} lg={3} key={`project-${count++}`}>
-                    <Card className="shadow-sm mb-4 h-100">
-                        <div class="imgContainer">
-                            <Card.Img className="overflow-hidden" variant="top" src={project.img} />
-                        </div>
-                        <Card.Body>
-                            <Card.Title>{project.title}</Card.Title>
-                            <Card.Text>{project.description}</Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            ))}
-        </Row>
+        <Col className="project mb-4" sm={6} md={6} lg={3}>
+            <Card className="shadow-sm mb-4 h-100">
+                <div class="imgContainer">
+                    <Card.Img className="overflow-hidden" variant="top" src={image} />
+                </div>
+                <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Text>{description}</Card.Text>
+                </Card.Body>
+            </Card>
+        </Col>
+
+    );
+};
+
+const Projects = () => {
+    return (
+        <Section id="projects" className="bg-light">
+            <ProjectTitle />
+            <Row className="d-flex">
+                {projects.map((project, index) => (
+                    <Project 
+                        key={index}
+                        image={project.image}
+                        title={project.title}
+                        description={project.description}
+                    />
+                ))}
+            </Row>
+        </Section>
     );
 }
 
