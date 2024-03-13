@@ -60,12 +60,12 @@ const ContactForm = () => {
 
 const Contact = () => {
     return (
-        <div>
+        <Section id="contact">
             <ContactTitle />
             <div className="py-4 mx-auto" style={{ maxWidth: '800px' }}>
                 <ContactForm />
             </div>
-        </div>
+        </Section>
     );
 }
 
