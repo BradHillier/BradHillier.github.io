@@ -9,7 +9,10 @@ import Footer from './footer.js';
 import SlideInTitle from './slideInTitle.js';
 import './App.css';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faNetworkWired, faServer, faMicrochip } from '@fortawesome/free-solid-svg-icons';
 
+library.add(faNetworkWired, faServer, faMicrochip);
 
 
 const App = () => {

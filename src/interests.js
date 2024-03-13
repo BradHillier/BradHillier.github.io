@@ -1,10 +1,8 @@
 import AnimatedRow from './animatedRow';
+import interests from './interests.json';
 
 import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faNetworkWired } from '@fortawesome/free-solid-svg-icons';
-import { faServer } from '@fortawesome/free-solid-svg-icons';
-import { faMicrochip } from '@fortawesome/free-solid-svg-icons';
 
 
 const Interest = ({ icon, title, body }) => {
@@ -29,25 +27,6 @@ const Interest = ({ icon, title, body }) => {
 
 
 const Interests = () => {
-
-    const interests = [
-        {
-            icon: faNetworkWired,
-            title: "Networking",
-            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        },
-        {
-            icon: faServer,
-            title: "Backend Development",
-            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        },
-        {
-            icon: faMicrochip,
-            title: "Embedded Systems",
-            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        }
-    ]
-
     return (
         <AnimatedRow>
             {interests.map((area, index) => (
