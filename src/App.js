@@ -5,30 +5,27 @@ import About from './about.js';
 import Projects, { ProjectTitle } from './projects/projects.js';
 import Contact from './contact.js';
 import Footer from './footer.js';
-import './App.css';
+import './App.scss';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faNetworkWired, faServer, faMicrochip } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faNetworkWired, faServer, faMicrochip);
+library.add(faNetworkWired, faServer, faMicrochip, faGithub);
 
 
 const App = () => {
   return (
     <div className="App">
-
       <NavigationBar />
-
+      <Home />
       <main>
-        <Home />
         <Interests />
         <About />
         <Projects />
         <Contact />
       </main>
-
       <Footer />
-
     </div>
   );
 };

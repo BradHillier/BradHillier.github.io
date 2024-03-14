@@ -31,7 +31,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <Navbar expand="md" sticky="top" className="bg-white shadow-sm" expanded={isNavExpanded}> 
+    <Navbar expand="md" sticky="top" className="shadow-sm" expanded={isNavExpanded}> 
       <Container>
         <Navbar.Brand onClick={closeNav} href="#home">Brad.H</Navbar.Brand>
         <Navbar.Toggle onClick={handleNavToggle} aria-controls="basic-navbar-nav" />
@@ -39,7 +39,7 @@ const NavigationBar = () => {
           <Nav className="mx-auto">
             {
               Object.keys(links).map(link => (
-                  <Nav.Link onClick={closeNav} className="mx-2" href={links[link]} key={link}>
+                  <Nav.Link onClick={closeNav} className="mx-auto px-4" href={links[link]} key={link}>
                     {link}
                   </Nav.Link>
               ))
