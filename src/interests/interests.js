@@ -14,6 +14,7 @@ const Interests = () => {
             <AnimatedRow>
                 {interests.map((area, index) => (
                     <Interest
+                        key={index}
                         icon={area.icon}
                         title={area.title}
                         body={area.body}
