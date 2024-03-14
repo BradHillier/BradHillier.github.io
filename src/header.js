@@ -19,13 +19,14 @@ const Header = () => {
             <Container className="py-5">
                 <Row className="align-items-center">
                     <Col>
+                        {/* Hero Text*/} 
+                        <h5 className="text-black">Hey, I'm Brad</h5>
                         <h1>
-                            <div>I'm Brad Hillier.</div>
-                            <div>A <span className="text-primary">Software Developer</span></div>
-                            <div className="text-black-50">based in Canada.</div>
+                            <div className="my-3">Aspiring <span className="text-primary">Software Engineer</span></div>
+                            <div className="my-3">Let's build something together!</div>
                         </h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <p className="mb-5 w-75">
+                            Whether you need a skilled developer or a collaborative team player, I'm eager to discuss how I can be a valuable asset to your project. 
                         </p>
                         <Button onClick={adjustScroll} href="#contact" variation="primary">Get in Touch</Button>
                     </Col>
