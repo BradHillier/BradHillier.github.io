@@ -2,16 +2,16 @@
     {
         "image": "crm_api.png",
         "title": "Customer Relationship Management API",
-        "description": "A robust back-end server designed to efficiently manage and organize the customer and rental data of a small business, written in Python using the Flask framework"
-    },
-    {
-        "image": "https://github.com/BradHillier/Morning-Meeting-Generator/raw/master/img/screenshots/meeting_document_screenshot.png",
-        "title": "Meeting ",
-        "description": "Brick breaker is a game inspired by atari's Breakout. I wrote it in Python utilizng the Pygame library. The game's goal is to destroy all the bricks on the screen by repeatedly bouncing a ball off a paddle into them."
+        "description": "A RESTful API to manage the customer and rental data of a small business"
     },
     {
         "image": "reminders.png",
         "title": "Apple Reminders Clone",
+        "description": "A web application emulating key features of iOS reminders built using React and Redux."
+    },
+    {
+        "image": "chess.png",
+        "title": "Pixel Chess",
         "description": "A web application emulating key features of iOS reminders built using React and Redux."
     },
     {
