@@ -1,5 +1,5 @@
 import NavigationBar from './nav.js';
-import Home from './home.js';
+import Header from './header.js';
 import Interests from './interests/interests.js';
 import About from './about.js';
 import Projects, { ProjectTitle } from './projects/projects.js';
@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div className="App">
       <NavigationBar />
-      <Home />
+      <Header />
       <main>
         <Interests />
         <About />

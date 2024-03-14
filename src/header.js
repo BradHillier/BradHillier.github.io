@@ -1,4 +1,3 @@
-import Section from './common/section';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 
 
-const Home = () => {
+const Header = () => {
 
     const adjustScroll = event => {
         const link_target = document.querySelector('#contact');
@@ -16,8 +15,8 @@ const Home = () => {
     };
 
     return (
-        <Section id="home" className="bg-light">
-            <Container fluid="md bg-ternary">
+        <header id="home" className="bg-light">
+            <Container className="py-5">
                 <Row className="align-items-center">
                     <Col>
                         <h1>
@@ -35,8 +34,8 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
-        </Section>
+        </header>
     );
 };
 
-export default Home;
+export default Header;
