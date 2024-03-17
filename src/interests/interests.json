@@ -2,12 +2,12 @@
     {
         "icon": "network-wired",
         "title": "Networking",
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "body": "The fascinating journey of data packets, orchestrated by protocols like TCP/IP, and their transformation into web experiences through protocols like HTTP fuels my interest in networking."
     },
     {
         "icon": "server",
         "title": "Backend Development",
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "body": "Crafting the hidden logic that drives applications is where I thrive.  Solving complex challenges behind the scenes and witnessing how my code translates into a smooth user experience is incredibly rewarding."
     },
     {
         "icon": "microchip",
