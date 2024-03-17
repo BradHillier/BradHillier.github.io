@@ -12,7 +12,7 @@ const ContactTitle = () => {
         <div className="text-center">
             <h2 className="mb-4">Contact Me</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Ready to discuss how my skills can benefit your team? Let's chat!
             </p>
         </div>
     );
