@@ -21,19 +21,13 @@ const NavigationBar = () => {
   };
 
   const closeNav = event => {
-    const link_target = document.querySelector(event.target.hash)
-    if (isNavExpanded) {
-      link_target.style.scrollMarginTop = '250px';
-    } else {
-      link_target.style.scrollMarginTop = '50px';
-    }
     setIsNavExpanded(false);
   };
 
   return (
-    <Navbar expand="md" sticky="top" className="shadow-sm" expanded={isNavExpanded}> 
+    <Navbar expand="md" fixed="top" expanded={isNavExpanded} className="shadow-sm"> 
       <Container>
-        <Navbar.Brand onClick={closeNav} href="#home">Brad.H</Navbar.Brand>
+        <Navbar.Brand onClick={closeNav} className="text-muted" href="#home">Brad Hillier</Navbar.Brand>
         <Navbar.Toggle onClick={handleNavToggle} aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
