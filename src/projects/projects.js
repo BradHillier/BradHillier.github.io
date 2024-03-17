@@ -13,11 +13,12 @@ const Projects = () => {
             <ProjectTitle />
             <Row className="d-flex">
                 {projects.map((project, index) => (
-                    <Col key={index} className="project mb-4" sm={6} md={6} lg={3}>
+                    <Col key={index} className="project mb-4" sm={6} md={6} lg={4}>
                         <Project 
                             image={project.image}
                             title={project.title}
                             description={project.description}
+                            tryLink={project.tryLink}
                         />
                     </Col>
                 ))}
