@@ -8,13 +8,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "terminal-icon.svg",
-      "type": "image/svg",
+      "src": "terminal-icon192.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "terminal-icon.svg",
-      "type": "image/svg",
+      "src": "terminal-icon512.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
