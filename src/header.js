@@ -1,6 +1,5 @@
 import Container from 'react-bootstrap/Container';
 import Stack from 'react-bootstrap/Stack';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
@@ -57,7 +56,9 @@ const Header = () => {
         }
 
         return (
-            <motion.div className="position-relative text-center"> 
+            <motion.div className="position-relative text-center mx-auto"
+                style={{ maxWidth: "min(60vw, 100%)"}}
+            > 
                 <Image className="position-relative" src="me.png" fluid style={imageStyle} />
                 <div style={underlayCircle} />
             </motion.div>
@@ -109,26 +110,24 @@ const Header = () => {
         <header id="home" className="bg-light">
             <Container className="py-5 col-xxl-10">
                 <motion.div
-                    className="row align-items-center flex-sm-row-reverse"
+                    className="row align-items-center flex-sm-row-reverse g-3"
                     variants={container}
                     initial="hidden"
                     whileInView="show"
                 >
-                    <Row className="align-items-center flex-lg-row-reverse">
-                        <Col sm={12} md={6} lg={6} className="mb-5">
-                            <HeroImage />
-                        </Col>
-                        <Col sm={12} md={6} lg={6} id="hero-text">
-                            <Stack gap={2}>
-                                <Hook />
-                                <CallToAction />
-                                <Stack gap={5}>
-                                    <HeroSubtext />
-                                    <CallToActionButton />
-                                </Stack>
+                    <Col sm={12} md={6} lg={6}>
+                        <HeroImage />
+                    </Col>
+                    <Col sm={12} md={6} lg={6}>
+                        <Stack gap={2}>
+                            <Hook />
+                            <CallToAction />
+                            <Stack gap={5}>
+                                <HeroSubtext />
+                                <CallToActionButton />
                             </Stack>
-                        </Col>
-                    </Row>
+                        </Stack>
+                    </Col>
                 </motion.div>
             </Container>
         </header>
