@@ -59,7 +59,7 @@ const Header = () => {
             <motion.div className="position-relative text-center mx-auto"
                 style={{ maxWidth: "min(60vw, 100%)"}}
             > 
-                <Image className="position-relative" src="me.png" fluid style={imageStyle} />
+                <Image className="position-relative" src="me.webp" fluid style={imageStyle} />
                 <div style={underlayCircle} />
             </motion.div>
         );

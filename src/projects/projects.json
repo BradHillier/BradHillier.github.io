@@ -1,20 +1,20 @@
 [
     {
-        "image": "crm_api.png",
+        "image": "crm_api.webp",
         "title": "Customer Relationship Management API",
         "description": "A RESTful API to manage the customer and rental data of a small business",
         "ReadLink": "#",
         "tryLink": "#"
     },
     {
-        "image": "reminders.png",
+        "image": "reminders.webp",
         "title": "Apple Reminders Clone",
         "description": "A web application emulating key features of iOS reminders built using React and Redux.",
         "ReadLink": "#",
         "tryLink": "https://bradhillier.github.io/Apple-Reminders-Clone/"
     },
     {
-        "image": "chess.png",
+        "image": "chess.webp",
         "title": "Pixel Chess",
         "description": "A web application emulating key features of iOS reminders built using React and Redux.",
         "ReadLink": "#",
