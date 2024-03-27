@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Interest = ({ props }) => {
     return (
-        <Card className = "border-0 bg-light" >
+        <Card className = "border-0 bg-light h-100" >
             <Card.Header className="bg-light border-bottom-0 mt-2">
                 <FontAwesomeIcon
                     className="fa-xl fa-fw text-info bg-white p-2 rounded shadow-sm"

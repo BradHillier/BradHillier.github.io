@@ -18,7 +18,7 @@ const Projects = () => {
                             image={project.image}
                             title={project.title}
                             description={project.description}
-                            tryLink={project.tryLink}
+                            buttons={project.buttons}
                         />
                     </Col>
                 ))}

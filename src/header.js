@@ -67,28 +67,14 @@ const Header = () => {
 
 
     const Hook = () => (
-        <motion.h3 variants={fadeIn} className="d-line-block">
-            <span>
-                Hey, I'm Brad, a&nbsp;
-            </span>
-            <span className="d-inline-block">
-                computer science student&nbsp;
-            </span>
-            <span>
-                and aspiring&nbsp;
-            </span>
-            <span className="text-primary d-inline-block">
+        <h1 className="d-line-block">
+            <motion.span variants={fadeIn}>
+                Hey, I'm Brad, an aspiring&nbsp;
+            </motion.span>
+            <motion.span variants={fadeIn} className="text-primary d-inline-block">
                 Software Engineer
-            </span>
-        </motion.h3>
-    );
-
-    const CallToAction = () => (
-        <motion.h1 variants={fadeIn}>
-            <div> 
-                Let's build something together!
-            </div>
-        </motion.h1>
+            </motion.span>
+        </h1>
     );
 
     const HeroSubtext = () => (
@@ -113,7 +99,7 @@ const Header = () => {
                     className="row align-items-center flex-sm-row-reverse g-3"
                     variants={container}
                     initial="hidden"
-                    whileInView="show"
+                    animate="show"
                 >
                     <Col sm={12} md={6} lg={6}>
                         <HeroImage />
@@ -121,7 +107,6 @@ const Header = () => {
                     <Col sm={12} md={6} lg={6}>
                         <Stack gap={2}>
                             <Hook />
-                            <CallToAction />
                             <Stack gap={5}>
                                 <HeroSubtext />
                                 <CallToActionButton />

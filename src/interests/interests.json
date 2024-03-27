@@ -1,17 +1,22 @@
 [
     {
+        "icon": "screwdriver-wrench",
+        "title": "Full-Stack Development",
+        "body": "Proficient in front-end (React, Redux, Bootstrap) and back-end (Flask) development, delivering modern web applications."
+    },
+    {
+        "icon": "plug",
+        "title": "API Development",
+        "body": "Expertise in crafting robust RESTful APIs ensures seamless data integration and application communication within projects."
+    },
+    {
+        "icon": "database",
+        "title": "Database Design",
+        "body": " Experienced in designing efficient databases using ERDs and ensuring BCNF normalization for optimal data storage and retrieval."
+    },
+    {
         "icon": "network-wired",
         "title": "Networking",
-        "body": "The fascinating journey of data packets, orchestrated by protocols like TCP/IP, and their transformation into web experiences through protocols like HTTP fuels my interest in networking."
-    },
-    {
-        "icon": "server",
-        "title": "Backend Development",
-        "body": "Crafting the hidden logic that drives applications is where I thrive.  Solving complex challenges behind the scenes and witnessing how my code translates into a smooth user experience is incredibly rewarding."
-    },
-    {
-        "icon": "microchip",
-        "title": "Embedded Systems",
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "body": "I possess a comprehensive understanding of communication protocols (HTTP, TCP/IP, UDP, TLS/SSL) and have experience working with Unix sockets."
     }
 ]

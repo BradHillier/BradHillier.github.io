@@ -9,7 +9,7 @@ const Interests = () => {
     return (
         <Section id="interests">
             <div className="pb-4">
-                <SlideInTitle title="Enthusiastic About" />
+                <SlideInTitle title="Growing Expertise In" />
             </div>
             <AnimatedRow>
                 {interests.map((area, index) => (

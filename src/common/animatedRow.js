@@ -39,7 +39,7 @@ const AnimatedRow = ({ children }) => {
             viewport={{ once: true }}
         >
             {Children.map(children, child =>
-                <motion.div className="col-md-4" variants={staggeredFadeUp}>
+                <motion.div className="col-md-3" variants={staggeredFadeUp}>
                     {child}
                 </motion.div>
             )}
