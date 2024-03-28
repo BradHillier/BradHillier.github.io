@@ -5,24 +5,30 @@ import Section from './../common/section';
 import ProjectTitle from './projectTitle.js';
 import Project from './project.js';
 import projects from './projects.json';
+import Rolodex from '../common/rolodex.js';
 
 
 const Projects = () => {
+    const colors = [
+        "#EBBAB9",
+        "#388697",
+        "#B5FFE1"
+    ]
     return (
         <Section id="projects" className="bg-light">
             <ProjectTitle />
-            <Row className="d-flex">
+            <Rolodex>
                 {projects.map((project, index) => (
-                    <Col key={index} className="project mb-4" sm={6} md={6} lg={4}>
                         <Project 
+                            key={index}
                             image={project.image}
                             title={project.title}
                             description={project.description}
                             buttons={project.buttons}
+                            color={colors[index]}
                         />
-                    </Col>
                 ))}
-            </Row>
+            </Rolodex>
         </Section>
     );
 };
