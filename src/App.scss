@@ -2,10 +2,7 @@ html {
     position: relative;
 }
 
-.project img {
-    display: block;
-    height: auto;
-}
+
 
 .imgContainer {
     max-height: 200px;
@@ -35,15 +32,15 @@ nav {
 }
 
 
-$primary: rgb(89, 60, 229);
-$secondary: rgb(230, 40, 114);
-$info: rgb(37, 128, 127);
-$muted: rgb(82,96,109);
-$light: rgb(246, 252, 255);
-$body-color: rgb(28, 30, 83);
-
-$navbar-light-color: $body-color;
-$navbar-light-active-color: $primary;
+// $primary: rgb(89, 60, 229);
+// $secondary: rgb(230, 40, 114);
+// $info: rgb(37, 128, 127);
+// $muted: rgb(82,96,109);
+// $light: rgb(246, 252, 255);
+// $body-color: rgb(28, 30, 83);
+// 
+// $navbar-light-color: $body-color;
+// $navbar-light-active-color: $primary;
 
 $btn-padding-x-lg: 1.6rem;
 $btn-padding-y-lg: 1em;
@@ -59,12 +56,41 @@ h1 {
     font-weight: 600;
 }
 
+h2 {
+    font-size: 4rem;
+    margin: 0;
+}
+
 h3 {
-    font-size: 3em;
+    font-size: 3rem;
 }
 
 h6 {
     font-weight: 400 !important;
-    color: $muted !important;
+//   color: $muted !important;
     font-size: 1.3em !important;
 }
+
+.eyebrow {
+    font-weight: 600 !important;
+    font-size: 1em !important;
+}
+
+p {
+    font-size: 1.3rem;
+//    color: $muted !important;
+    font-weight: 600;
+}
+
+@media (max-width: 800px) { 
+    h2 { font-size: 2.75rem; }
+    h3 { font-size: 2rem; }
+    p { font-size: 1rem; }
+ }
+
+ .project {
+    p {
+        color: #86868b !important;
+        font-weight: 400;
+    }
+ }
