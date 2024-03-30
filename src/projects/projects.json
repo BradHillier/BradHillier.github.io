@@ -2,16 +2,16 @@
     {
         "image": "crm_api.webp",
         "title": "Customer Relationship Management API",
-        "description": "A RESTful API to manage the customer and rental data of a small business",
+        "description": "A RESTful API implemented in Python using Flask — designed to efficiently manage and organize the customer and rental data of a small kayak outfitter.",
         "buttons": [
             {
                 "icon": ["fab", "github"],
-                "label": "View the Code",
+                "label": "View Code",
                 "link": "https://github.com/BradHillier/CRM-API"
             },
             {
                 "icon": "book",
-                "label": "Read the Docs",
+                "label": "Read Docs",
                 "link": "https://bradhillier.ca/CRM_API_documentation"
             }
         ]
@@ -23,12 +23,12 @@
         "buttons": [
             {
                 "icon": ["fab", "github"], 
-                "label": "View the Code",
+                "label": "View Code",
                 "link": "https://github.com/BradHillier/Apple-Reminders-Clone"
             },
             {
                 "icon": "play",
-                "label": "Try the Demo",
+                "label": "Try Demo",
                 "link": "https://bradhillier.ca/Apple-Reminders-Clone"
             }
         ]
@@ -36,7 +36,7 @@
     {
         "image": "chess.webp",
         "title": "Pixel Chess",
-        "description": "A web application emulating key features of iOS reminders built using React and Redux.",
+        "description": "A graphical Chess game written entirely in C++ using the SDL2 graphics library.",
         "buttons": []
     }
 ]
