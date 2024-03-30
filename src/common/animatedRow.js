@@ -32,14 +32,14 @@ const AnimatedRow = ({ children }) => {
     };
 
     return (
-        <motion.div className="row"
+        <motion.div className="row g-5"
             variants={container}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
         >
             {Children.map(children, child =>
-                <motion.div className="col-md-3" variants={staggeredFadeUp}>
+                <motion.div className="col-md-6" variants={staggeredFadeUp}>
                     {child}
                 </motion.div>
             )}
