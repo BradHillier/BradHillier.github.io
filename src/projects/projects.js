@@ -1,6 +1,6 @@
 import Section from './../common/section';
-import ProjectTitle from './projectTitle.js';
-import Project, { Reminders, Chess } from './project.js';
+import SectionHeadline from './../common/sectionHeadline.js';
+import { KayakRentalAPI, Reminders, Chess } from './project.js';
 import projects from './projects.json';
 import Rolodex from '../common/rolodex.js';
 
@@ -13,7 +13,10 @@ const Projects = () => {
     ]
     return (
         <Section id="projects" className="bg-white">
-            <ProjectTitle />
+            <SectionHeadline
+                eyebrow="SEE WHAT I'M WORKING ON"
+                headline="Personal Projects"
+             />
             <Rolodex>
                 <Chess
                     image={projects[2].image}
@@ -22,7 +25,7 @@ const Projects = () => {
                     buttons={projects[2].buttons}
                     color={colors[1]}
                 />
-                <Project
+                <KayakRentalAPI
                     image={projects[0].image}
                     title={projects[0].title}
                     description={projects[0].description}
