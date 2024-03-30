@@ -7,9 +7,13 @@
  * @version 1.0.0 
  * 
  * Known Bugs:
- * - If Rolodex is on or above the viewport when scrolling up or refreshing the page, 
+ * 1. If Rolodex is on or above the viewport when scrolling up or refreshing the page, 
  *   The element will return to its original size and will no longer scale until the
- *   page is refreshed
+ *   page is refreshed. Temporaryily commenting out the resize event listener on Roldex Card
+ *   alleviates the issue, but limits the responsiveness of the component.
+ *
+ * 2. On some browsers, the dark background can be seen sticky out slightly along the corners
+ *    of the cards.
  */
 
 import { useState, useEffect, useRef, Children } from "react";
@@ -25,7 +29,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
  * @param {React.ReactNode} children - The contents to be displayed inside of the card.
  * @returns {JSX.Element} A Rolodex Card element.
  */
-const RolodexCard = ({ initialStick, hang = 0, finalStick, finalSize, children }) => {
+const RolodexCard = ({ index, last, initialStick, hang = 0, finalStick, finalSize, children }) => {
     const ref = useRef(null);
 
     /**The top/bottom of the element relative to the 
@@ -40,9 +44,9 @@ const RolodexCard = ({ initialStick, hang = 0, finalStick, finalSize, children }
     });
 
     const scale = useTransform(
-        scrollY, 
+        scrollY,
         [top - initialStick + hang, bottom + hang], 
-        [1, finalSize], 
+        [1, finalSize],
         { clamp: true }
     );
 
@@ -55,30 +59,41 @@ const RolodexCard = ({ initialStick, hang = 0, finalStick, finalSize, children }
         { clamp: true }
     );
 
-    const handleResize = () => {
+    const opacity = useTransform(
+        scrollY, 
+        [top - initialStick + hang, bottom + hang], 
+        [1, 0.6],  
+        { clamp: true }
+    );
+
+    const handleResize = (event) => {
         setTop(ref.current.offsetTop);
         setBottom(ref.current.offsetTop + ref.current.offsetHeight);
     };
     
     useEffect(() => {
         handleResize(); // Initialize top and bottom
-        window.visualViewport.addEventListener('resize', handleResize);
-        return () => {
-            window.visualViewport.removeEventListener('resize', handleResize);
-        };
+
+        /**This is commented out to temporarily alleviate bug 1 */
+        // window.visualViewport.addEventListener('resize', event => handleResize(event));
+        // return () => {
+        //     window.visualViewport.removeEventListener('resize', handleResize);
+        // };
     }, []);
 
     return (
-        <motion.div 
+        <motion.div className="bg-dark"
             ref={ref} 
             style={{
                 position: "sticky",
-                overflow: "hidden",
+                borderRadius: "2em",
                 top: transY,
                 scale: scale
             }}
         >
-            {children}
+            <motion.div style={{ opacity: index === last ? 1 : opacity }}>
+                {children}
+            </motion.div>
         </motion.div>
     );
 };
@@ -95,10 +110,12 @@ const Rolodex = ({ children }) => {
             {Children.map(children, (child, index) => 
                 <RolodexCard 
                     key={index}
+                    index={index}
+                    last={children.length - 1}
                     initialStick={20 * index + 50}
                     finalStick={5 * index - 40}
                     finalSize={index / 20 + 0.75}
-                    hang={100}
+                    hang={0}
                 >
                     {child}
                 </RolodexCard>
