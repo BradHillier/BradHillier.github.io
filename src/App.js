@@ -5,6 +5,7 @@ import About from './about.js';
 import Projects from './projects/projects.js';
 import Contact from './contact.js';
 import Footer from './footer.js';
+import LanguageMarquee from './languageMarquee.js';
 import './App.scss';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -20,8 +21,9 @@ const App = () => {
       <NavigationBar />
       <Header />
       <main>
-        <Interests />
+        <LanguageMarquee />
         <About />
+        <Interests />
         <Projects />
         <Contact />
       </main>
