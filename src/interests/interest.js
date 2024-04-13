@@ -1,13 +1,17 @@
 import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
 
 
 const Interest = ({ props }) => {
     return (
-        <Card className = "border-0 bg-light h-100" >
-            <Card.Header className="bg-light border-bottom-0 mt-2">
+        <Card className = "border-0 h-100">
+            <Card.Header className="bg-white border-bottom-0 mt-2 fs-2">
                 <FontAwesomeIcon
-                    className="fa-xl fa-fw text-info bg-white p-2 rounded shadow-sm"
+                    className="fa-fw text-primary bg-white p-3 shadow"
+                    style={{
+                        borderRadius: "1rem"
+                    }}
                     icon={props.icon} />
             </Card.Header>
             <Card.Body className="pt-0">
