@@ -43,24 +43,12 @@ const Header = () => {
             borderRadius: "40px", 
             zIndex: 1,
         };
-        const underlayCircle = {
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "80%",
-            aspectRatio: "1",
-            borderRadius: "50%",
-            backgroundColor: "rgb(230, 40, 114)",
-            zIndex: 0
-        }
 
         return (
             <motion.div className="position-relative text-center mx-auto"
                 style={{ maxWidth: "min(60vw, 100%)"}}
             > 
                 <Image className="position-relative" src="me.webp" fluid style={imageStyle} />
-                <div style={underlayCircle} />
             </motion.div>
         );
     };
@@ -68,24 +56,22 @@ const Header = () => {
 
     const Hook = () => (
         <h1 className="d-line-block">
-            <motion.span variants={fadeIn}>
-                Hey, I'm Brad, an aspiring&nbsp;
-            </motion.span>
-            <motion.span variants={fadeIn} className="text-primary d-inline-block">
-                Software Engineer
-            </motion.span>
+            <motion.div variants={fadeIn}>
+                Hi, I'm <span className="text-primary">Brad.</span>
+            </motion.div>
         </h1>
     );
 
-    const HeroSubtext = () => (
+    const Subtext = () => (
         <motion.h6 variants={fadeUp}>
-            Whether you need a skilled developer or a collaborative team player, I'm eager to discuss how I can be a valuable asset to your project.
+            Whether you need a skilled developer or a collaborative team player,
+            I'm eager to discuss how I can be a valuable asset to your project.
         </motion.h6>
     );
 
-    const CallToActionButton = () => (
+    const CallToAction = () => (
         <motion.div variants={fadeIn}>
-            <Button href="#contact" variation="primary" size="lg">
+            <Button href="#contact" variation="primary" size="lg" className="rounded-pill p-3">
                 Get in Touch &nbsp;
                 <FontAwesomeIcon icon={"arrow-right"} />
             </Button>
@@ -93,7 +79,7 @@ const Header = () => {
     );
 
     return (
-        <header id="home" className="bg-light">
+        <header id="home" className="bg-white">
             <Container className="py-5 col-xxl-10">
                 <motion.div
                     className="row align-items-center flex-sm-row-reverse g-3"
@@ -108,8 +94,8 @@ const Header = () => {
                         <Stack gap={2}>
                             <Hook />
                             <Stack gap={5}>
-                                <HeroSubtext />
-                                <CallToActionButton />
+                                <Subtext />
+                                <CallToAction />
                             </Stack>
                         </Stack>
                     </Col>
