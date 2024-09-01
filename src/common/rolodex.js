@@ -17,7 +17,9 @@
  */
 
 import { useState, useEffect, useRef, Children } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, circInOut } from "framer-motion";
+import "../rolodex.scss"
+
 
 /**
  * A Rolodex Card component that sticks to the top of the viewport and scales in size as the user scrolls past it.
@@ -29,7 +31,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
  * @param {React.ReactNode} children - The contents to be displayed inside of the card.
  * @returns {JSX.Element} A Rolodex Card element.
  */
-const RolodexCard = ({ index, last, initialStick, hang = 0, finalStick, finalSize, children }) => {
+const RolodexCard = ({ index, initialStick, hang = 0, finalStick, finalSize, children }) => {
     const ref = useRef(null);
 
     /**The top/bottom of the element relative to the 
@@ -37,64 +39,66 @@ const RolodexCard = ({ index, last, initialStick, hang = 0, finalStick, finalSiz
      */
     const [top, setTop] = useState(0);
     const [bottom, setBottom] = useState(0);
+    const [leavingFocusRange, setLeavingFocusRange] = useState([0,0]); 
+    const [scaleOffset, setScaleOffset] = useState(0);
 
     const { scrollY } = useScroll({
         target: ref,
         top: [1, 0]
     });
 
-    const scale = useTransform(
-        scrollY,
-        [top - initialStick + hang, bottom + hang], 
+    const scale = useTransform(scrollY, 
+        leavingFocusRange, 
         [1, finalSize],
-        { clamp: true }
+        { ease: circInOut}
     );
 
-    // Used to continue slightly moving the Card upwards
-    // as it scales down in size.
-    const transY = useTransform(
-        scrollY, 
-        [top - initialStick + hang, bottom + hang], 
-        [initialStick, finalStick],  
-        { clamp: true }
+    const opacity = useTransform(scrollY, 
+        leavingFocusRange, 
+        [0, 1],
+        { ease: circInOut }
     );
 
-    const opacity = useTransform(
-        scrollY, 
-        [top - initialStick + hang, bottom + hang], 
-        [1, 0.6],  
-        { clamp: true }
+    const transY = useTransform(scrollY, 
+        leavingFocusRange,
+        [initialStick, finalStick - scaleOffset],
+        { ease: circInOut }
     );
+
 
     const handleResize = (event) => {
-        setTop(ref.current.offsetTop);
-        setBottom(ref.current.offsetTop + ref.current.offsetHeight);
+        setLeavingFocusRange([ref.current.offsetTop - initialStick + hang, ref.current.offsetTop + 1.5*ref.current.offsetHeight + 100]);
+        setScaleOffset(ref.current.offsetHeight * (1 - finalSize) / 2);
     };
     
     useEffect(() => {
         handleResize(); // Initialize top and bottom
 
         /**This is commented out to temporarily alleviate bug 1 */
-        // window.visualViewport.addEventListener('resize', event => handleResize(event));
-        // return () => {
-        //     window.visualViewport.removeEventListener('resize', handleResize);
-        // };
+        window.visualViewport.addEventListener('resize', event => handleResize(event));
+        return () => {
+            window.visualViewport.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     return (
-        <motion.div className="bg-dark"
+        <motion.section className="rolodex-card-container"
             ref={ref} 
             style={{
-                position: "sticky",
-                borderRadius: "2em",
                 top: transY,
-                scale: scale
+                scale: scale,
             }}
         >
-            <motion.div style={{ opacity: index === last ? 1 : opacity }}>
+            <motion.div  className="rolodex-card">
                 {children}
             </motion.div>
-        </motion.div>
+
+            <motion.div className="rolodex-shadow" 
+                style={{ 
+                    background: `#${String(3 + index).repeat(3)}`,
+                    opacity: opacity, 
+                }}/>
+        </motion.section>
     );
 };
 
@@ -105,17 +109,27 @@ const RolodexCard = ({ index, last, initialStick, hang = 0, finalStick, finalSiz
  * @returns {JSX.Element} A Rolodex component with stacked cards.
  */
 const Rolodex = ({ children }) => {
+
+    /**
+     * delta values representing the difference between properties of subsequent Rolodex Card
+     */
+    const diffInScale = 0.02  // The difference in scale as a percentage
+    const dy = 10    // The difference in position along the y-axis in pixels
+
+    const minScale = 0.8
+    const offsetFromViewportTop = 50
+    const scaleEffectScrollDisance = 50
+
     return (
-        <div>
+        <div className="rolodex" >
             {Children.map(children, (child, index) => 
                 <RolodexCard 
                     key={index}
                     index={index}
-                    last={children.length - 1}
-                    initialStick={20 * index + 50}
-                    finalStick={5 * index - 40}
-                    finalSize={index / 20 + 0.75}
-                    hang={0}
+                    initialStick={offsetFromViewportTop + scaleEffectScrollDisance}
+                    finalStick={offsetFromViewportTop + dy*index}
+                    finalSize={diffInScale*index + minScale}
+                    hang={-200}
                 >
                     {child}
                 </RolodexCard>

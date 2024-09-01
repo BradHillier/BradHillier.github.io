@@ -7,31 +7,25 @@ import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 
 
-const ProjectWrapper = ({ children }) => (
-        <Container className="project bg-light text-dark" style={{
-            borderRadius: "2em",
-            margin: "20px 0px",
-            padding: "40px",
-            paddingBottom: "0px",
+const ProjectWrapper = ({ className, children }) => (
+        <Container className="project text-light" style={{
             overflow: "hidden",
-            maxHeight: "80vh",
-            minHeight: "80vh"
         }}>
             {children}
         </Container>
 
 );
 
-export const KayakRentalAPI = ({ image, title, description, buttons, color }) => (
+
+export const SubWrapper = ({ image, title, description, buttons, color, imageSide }) => (
     <ProjectWrapper>
-        <Row className="text-center gy-4">
-            <h3>{title}</h3>
-        </Row>
-        <Row className="gy-4">
-            <Col lg={5}>
-                <Stack gap={1}>
-                    <p>{description}</p>
-                    <Stack direction="horizontal" gap={3}>
+        <Row className="gx-5" style={{background: color, minHeight: "600px"}}>
+
+            <Col lg={6} className="align-self-center">
+                <Stack gap={4} className="text-center m-5">
+                    <h4>{title}</h4>
+                    <p className="fs-5">{description}</p>
+                    <Stack direction="horizontal" gap={4} className="justify-content-center">
                         {
                             buttons.map((button, index) => (
                                 <Button key={index} target="_blank" href={button.link} variant="outline-secondary">
@@ -43,66 +37,65 @@ export const KayakRentalAPI = ({ image, title, description, buttons, color }) =>
                     </Stack>
                 </Stack>
             </Col>
-            <Col lg={7}>
-                <Image src={image} style={{ borderRadius: "20px 20px 0px 0px" }} fluid/>
+
+            <Col lg={6} className="p-0 align-self-center">
+                <Image alt={"image"} src={image} style={{height: "500px"}}/>
             </Col>
+
         </Row>
     </ProjectWrapper>
 );
 
+export const Project = ({ image, title, description, buttons, bg="black" }) => {
 
-export const Reminders = ({ image, title, description, buttons, color }) => (
-    <ProjectWrapper>
-        <Row className="d-flex flex-sm-row-reverse gy-5">
-            <Col lg={5} className="mx-auto d-flex align-items-center" style={{ maxHeight: "500px" }}>
-                <div>
-                    <h3 className="text-center text-dark">{title}</h3>
-                    <p>{description}</p>
-                    <Stack direction="horizontal" gap={3}>
-                    {
-                        buttons.map((button, index) => (
-                            <Button key={index} target="_blank" href={button.link} variant="outline-primary">
-                                <FontAwesomeIcon icon={button.icon} />
-                                &nbsp;{button.label}
-                            </Button>
-                        ))
-                    }
+    if (window.innerWidth < 768) {
+        return (
+
+        <Container className="project bg-light text-dark" style={{
+            overflow: "hidden",
+        }}>
+            <Row>
+                <Col className="d-flex p-0">
+                    <Stack gap={4} className="text-center">
+                        <h3 className="mt-4">{title}</h3>
+                        <p className="fs-4 px-4">{description}</p>
+                        <Image alt={"image"} src={image} fluid />
                     </Stack>
-                </div>
-            </Col>
-            <Col lg={5}>
-                <Image src={image} fluid/>
-            </Col>
-        </Row>
-    </ProjectWrapper>
-);
+                </Col>
 
 
-export const Chess = ({ image, title, description, buttons, color }) => (
-    <ProjectWrapper>
-        <Row>
-            <Col lg={6} className="mx-auto d-flex align-items-center" style={{ maxHeight: "500px" }}>
-                <div>
-                    <h3 className="text-center">{title}</h3>
-                    <p>{description}</p>
-                    <p>Designed and developed over the course of 4 months, as part of a team.</p>
-                    <Stack direction="horizontal" gap={3}>
-                    {
-                        buttons.map((button, index) => (
-                            <Button key={index} target="_blank" href={button.link} variant="outline-dark">
-                                <FontAwesomeIcon icon={button.icon} />
-                                &nbsp;{button.label}
-                            </Button>
-                        ))
-                    }
+            </Row>
+        </Container>
+        )
+    }
+    return (
+        <Container className="project bg-light text-dark" style={{
+            overflow: "hidden",
+        }}>
+            <Row>
+
+                <Col className="d-flex p-0">
+                    <Stack gap={4} className="text-center m-5">
+                        <h4>{title}</h4>
+                        <p className="fs-5">{description}</p>
+                        <Stack direction="horizontal" gap={4} className="justify-content-center">
+                            {
+                                buttons.map((button, index) => (
+                                    <Button key={index} target="_blank" href={button.link} variant="outline-secondary">
+                                        <FontAwesomeIcon icon={button.icon} />
+                                        &nbsp;{button.label}
+                                    </Button>
+                                ))
+                            }
+                        </Stack>
                     </Stack>
-                </div>
-            </Col>
-            <Col lg={6}>
-                <Image src={image} style={{
-                    borderRadius: "20px 20px 0px 0px"
-                }} fluid/>
-            </Col>
-        </Row>
-    </ProjectWrapper>
-);
+                </Col>
+
+                <Col lg="auto" className="d-flex p-0" style={{ maxWidth: "50%" }}>
+                    <Image alt={"image"} src={image} fluid />
+                </Col>
+
+            </Row>
+        </Container>
+    )
+};
