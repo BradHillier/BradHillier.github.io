@@ -34,11 +34,6 @@ import "../rolodex.scss"
 const RolodexCard = ({ index, initialStick, hang = 0, finalStick, finalSize, children }) => {
     const ref = useRef(null);
 
-    /**The top/bottom of the element relative to the 
-     * top/bottom of the view port in pixels 
-     */
-    const [top, setTop] = useState(0);
-    const [bottom, setBottom] = useState(0);
     const [leavingFocusRange, setLeavingFocusRange] = useState([0,0]); 
     const [scaleOffset, setScaleOffset] = useState(0);
 
@@ -53,11 +48,14 @@ const RolodexCard = ({ index, initialStick, hang = 0, finalStick, finalSize, chi
         { ease: circInOut}
     );
 
-    const opacity = useTransform(scrollY, 
+    const brightnessMap = useTransform(scrollY, 
         leavingFocusRange, 
-        [0, 1],
+        [1, 0.1],
         { ease: circInOut }
     );
+
+    const brightness = useTransform(() => `brightness(${brightnessMap.get()})`);
+    
 
     const transY = useTransform(scrollY, 
         leavingFocusRange,
@@ -67,7 +65,8 @@ const RolodexCard = ({ index, initialStick, hang = 0, finalStick, finalSize, chi
 
 
     const handleResize = (event) => {
-        setLeavingFocusRange([ref.current.offsetTop - initialStick + hang, ref.current.offsetTop + 1.5*ref.current.offsetHeight + 100]);
+
+        setLeavingFocusRange([ref.current.offsetTop - initialStick + hang, ref.current.offsetTop + 2*ref.current.offsetHeight]);
         setScaleOffset(ref.current.offsetHeight * (1 - finalSize) / 2);
     };
     
@@ -75,10 +74,10 @@ const RolodexCard = ({ index, initialStick, hang = 0, finalStick, finalSize, chi
         handleResize(); // Initialize top and bottom
 
         /**This is commented out to temporarily alleviate bug 1 */
-        window.visualViewport.addEventListener('resize', event => handleResize(event));
-        return () => {
-            window.visualViewport.removeEventListener('resize', handleResize);
-        };
+        // window.visualViewport.addEventListener('resize', event => handleResize(event));
+        // return () => {
+            // window.visualViewport.removeEventListener('resize', handleResize);
+        // };
     }, []);
 
     return (
@@ -89,15 +88,9 @@ const RolodexCard = ({ index, initialStick, hang = 0, finalStick, finalSize, chi
                 scale: scale,
             }}
         >
-            <motion.div  className="rolodex-card">
+            <motion.div className="rolodex-card" style={{ filter: brightness }}>
                 {children}
             </motion.div>
-
-            <motion.div className="rolodex-shadow" 
-                style={{ 
-                    background: `#${String(3 + index).repeat(3)}`,
-                    opacity: opacity, 
-                }}/>
         </motion.section>
     );
 };
@@ -118,7 +111,7 @@ const Rolodex = ({ children }) => {
 
     const minScale = 0.8
     const offsetFromViewportTop = 50
-    const scaleEffectScrollDisance = 50
+    const scaleEffectScrollDisance = 100
 
     return (
         <div className="rolodex" >
@@ -127,8 +120,8 @@ const Rolodex = ({ children }) => {
                     key={index}
                     index={index}
                     initialStick={offsetFromViewportTop + scaleEffectScrollDisance}
-                    finalStick={offsetFromViewportTop + dy*index}
-                    finalSize={diffInScale*index + minScale}
+                    finalStick={offsetFromViewportTop} //offsetFromViewportTop + dy*index}
+                    finalSize={minScale} //diffInScale*index + minScale}
                     hang={-200}
                 >
                     {child}
