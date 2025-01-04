@@ -1,0 +1,18 @@
+{
+    "circle": [
+        { "height": 10, "offset": -40, "duration": 30, "diameter": 520 },
+        { "height": 10, "offset": -10, "duration": 32, "diameter": 640 },
+        { "height": 15, "offset": 90, "duration": 34, "diameter": 700 }
+    ],
+    "star": [
+        { "height": 40, "offset": 54, "duration": 40, "diameter": 820 },
+        { "height": 50, "offset": -30, "duration": 42, "diameter": 750 },
+        { "height": 120, "offset": 240, "duration": 48, "diameter": 1120 }
+    ],
+    "sparkle": [
+        { "height": 24, "offset": 36, "duration": 36, "diameter": 620 },
+        { "height": 40, "offset": -56, "duration": 38, "diameter": 620 },
+        { "height": 50, "offset": 136, "duration": 44, "diameter": 800 },
+        { "height": 75, "offset": 105, "duration": 46, "diameter": 950 }
+    ]
+}

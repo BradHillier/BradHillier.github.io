@@ -1,0 +1,12 @@
+
+.rolodex {
+
+    // Ensures the bottom rolodex card can reach its terminal position before the section scrolls up
+    padding: 10px 0px;
+
+    .rolodex-card {
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+    }
+}

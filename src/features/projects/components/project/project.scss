@@ -1,0 +1,80 @@
+/**
+ * Project
+ * =================================
+ */
+
+ @use 'src/styles/main' as *;
+
+
+
+/**
+ *
+ */
+.project {
+    @include rounded;
+    @include flex-column;
+
+    &::before {
+        @include grain;
+        @include rounded;
+        pointer-events: none;
+    }
+
+    &::after {
+        @include offset-outline;
+        pointer-events: none;
+    }
+
+    background-color: color-mix(in srgb, $background-color, white 10%); 
+    padding: 2rem;          // should be a variable
+    padding-bottom: 0 !important;
+
+    @include for-size(tablet-portrait-up) {
+        padding: 3rem;
+    }
+
+    @include for-size(tablet-landscape-up) {
+        flex-direction: row;
+        gap: 4rem;
+        padding: 4rem;
+        padding-right: 0 !important;
+
+        > * {
+            flex-shrink: 1;
+            max-width: 50%;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+    }
+
+    /**
+    *
+    */
+    section {
+        @include flex-column;
+        margin-bottom: 2rem;
+
+        hr {
+            border-top: 1px solid $gray-border;
+            margin: 0.5rem 0rem;
+        }
+
+        footer {
+            @include button-wrapper;
+        }
+    }
+
+    /**
+    *
+    */
+    img {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+
+        @include for-size(tablet-landscape-up) {
+            border-top-right-radius: 0;
+        }
+    }
+}

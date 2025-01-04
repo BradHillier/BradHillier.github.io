@@ -1,0 +1,88 @@
+@import 'variables';
+
+
+@mixin for-size($size) {
+    @if $size == phone-only {
+      @media (max-width: 599px) { @content; }
+    } @else if $size == tablet-portrait-up {
+      @media (min-width: 600px) { @content; }
+    } @else if $size == tablet-landscape-up {
+      @media (min-width: 992px) { @content; }
+    } @else if $size == desktop-up {
+      @media (min-width: 1200px) { @content; }
+    } @else if $size == big-desktop-up {
+      @media (min-width: 1800px) { @content; }
+    }
+}
+
+/** 
+ * BUG: This is overtop of the image and text and needs to be put behind them
+ */
+ @mixin grain {
+    content: '';
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../public/grain.jpg");
+    opacity: 5%;
+}
+
+@mixin offset-outline {
+    content: '';
+    z-index: 10;
+    position: absolute;
+    outline: 2px solid $gray-border;
+    outline-offset: -2px;
+    border-radius: 20px;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin rounded {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+@mixin circle($size) {
+    border-radius: 9999px;
+    height: $size;
+    aspect-ratio: 1;
+}
+
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+@mixin button-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    @include for-size(tablet-portrait-up) {
+        gap: 1rem;
+    }
+
+    button {
+        flex-grow: 1;
+        border-radius: 1rem;
+
+        @include for-size(tablet-landscape-up) {
+            flex-grow: 0
+        }
+    }
+}

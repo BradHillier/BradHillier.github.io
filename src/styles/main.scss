@@ -1,0 +1,19 @@
+@forward 'base/mixins';
+@forward 'base/typography';
+
+@import 'base/variables';
+
+html {
+    position: relative;
+}
+
+#interests, #about, #projects, #contact {
+    scroll-margin-top: 50px;
+    max-width: 1020px;
+    margin: auto;
+}
+
+body {
+    margin-top: 50px;
+    background-color: $background-color;
+}

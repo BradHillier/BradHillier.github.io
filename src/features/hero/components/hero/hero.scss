@@ -1,0 +1,109 @@
+@use 'src/styles/main' as *;
+
+@import 'src/components/ui/button/button';
+
+
+@keyframes fadeOut {
+    from { opacity: 100%; }
+    to { opacity: 0%; }
+}
+
+#home {
+
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100px;
+
+    .grain {
+        @include grain;
+    }
+
+    .content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 4rem 0rem;
+
+        @include for-size(tablet-portrait-up) {
+            padding: 16rem 0rem;
+        }
+        @include for-size(tablet-landscape-up) {
+            padding: 8rem 8rem;
+        }
+
+        .memoji, .button-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .memoji {
+
+            img {
+                height: 100px;
+            }
+
+            .status {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                color: white;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 0.25rem 1rem;
+                font-weight: 500;
+
+                border: 1px solid $gray-border;
+                border-radius: 0.5rem;
+
+                * {
+                    display: inline-block;
+                }
+
+                .status-light {
+                    @include circle(10px);
+                    background-color: greenyellow;
+                }
+                .status-light-glow {
+                    @extend .status-light;
+                    position: absolute;
+                    filter: blur(4px);
+                    animation: fadeOut 1s linear alternate infinite;
+                }
+            }
+        }
+
+        h2 {
+            margin-top: $spacer-lg;
+        }
+
+        .button-wrapper {
+            justify-content: center;
+            gap: $spacer-sm;
+
+            @include for-size(tablet-portrait-up) {
+                flex-direction: row;
+            }
+        }
+    }
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100px;
+
+    }
+
+    &::before {
+        background: linear-gradient($background-color, transparent);
+    }
+
+    &::after {
+        bottom: 0;
+        background: linear-gradient(transparent, $background-color);
+    }
+}
+

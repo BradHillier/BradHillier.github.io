@@ -1,0 +1,52 @@
+@use 'src/styles/main' as *;
+
+
+@mixin gradient-circle($size) {
+    @include center;
+    border: 2px solid $primary;
+    z-index: -1;
+    aspect-ratio: 1;
+    height: $size;
+    border-radius: 50%;
+    background: radial-gradient(circle, $background-color 58%, $primary);
+    opacity: 5%;
+}
+
+.galaxy {
+    pointer-events: none;
+
+    .galatic-disk-1 {
+        @include gradient-circle(620px);
+    }
+    .galatic-disk-2 {
+        @include gradient-circle(820px);
+    }
+    .galatic-disk-3 {
+        @include gradient-circle(1020px);
+    }
+    .galatic-disk-4 {
+        @include gradient-circle(1220px);
+    }
+
+    .star, .sparkle, .circle {
+        z-index: -1;
+        color: $primary;
+    }
+
+    .star {
+        opacity: 0.9;
+        animation: spin 6s linear infinite;
+    }
+
+    .sparkle {
+        opacity: 0.25;
+        animation: spin 3s linear infinite;
+    }
+
+    .circle {
+        aspect-ratio: 1;
+        background-color: $primary;
+        opacity: 0.25;
+        border-radius: 9999px;
+    }
+}

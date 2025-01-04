@@ -1,0 +1,39 @@
+/**
+ * Variables
+ * =================================
+ */
+
+$emerald: rgb(110 231 183);
+$primary: rgb(110 231 183);
+$headline-color: white;
+$foreground-color: rgba(255, 255, 255, 0.6);
+
+$secondary: rgba(97, 182, 235, 1);
+$gray-border: rgb(255 255 255 / 0.15);
+
+$background-color: rgb(18, 24, 38);
+
+
+$spacer-base:           1rem;
+$spacer-xs:             $spacer-base * 0.75;
+$spacer-sm:             $spacer-base * 1;
+$spacer-md:             $spacer-base * 1.5;
+$spacer-lg:             $spacer-base * 2;
+$spacer-xl:             $spacer-base * 2.5;
+$spacer-xxl:            $spacer-base * 3;
+$spacer-xxl:            $spacer-base * 3;
+
+/**
+ * Fonts
+ * =================================
+ */
+$serif:     "Calistoga", serif;
+$sans:      helvetica;
+
+$font-size-base:        1rem;
+$font-size-xs:          $font-size-base * 1;
+$font-size-sm:          $font-size-base * 1.125;
+$font-size-md:          $font-size-base * 1.25;
+$font-size-lg:          $font-size-base * 1.5;
+$font-size-xl:          $font-size-base * 2.5;
+$font-size-xxl:         $font-size-base * 3;

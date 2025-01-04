@@ -1,0 +1,13 @@
+.orbit {
+    position: absolute;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    aspect-ratio: 1;
+
+    .rotation-offset, .rotate {
+        height: 100%;
+        width: 100%;
+    }
+}

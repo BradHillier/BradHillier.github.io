@@ -1,0 +1,25 @@
+@import '../../../styles/base/variables';
+
+
+.button-base {
+    padding: $spacer-xs $spacer-xs;
+
+    font-size: $font-size-sm;
+    font-weight: 600;
+
+    border: 2px solid $gray-border;
+    border-radius: $spacer-xs;
+}
+
+button {
+    @extend .button-base;
+    color: black;
+    background-color: white;
+
+}
+
+.outline-button {
+    @extend .button-base;
+    color: white;
+    background-color: $background-color;
+}

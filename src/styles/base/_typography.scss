@@ -1,0 +1,63 @@
+/**
+ * Typography
+ * =================================
+ * - Mixins
+ *      - gradient-text
+ * - Classes
+ *      - eyebrow
+ *      - headline
+ */
+
+@use '../base/variables' as *;
+
+
+
+/**
+ * Mixins
+ * =================================
+ */
+@mixin gradient-text {
+    display: inline;
+    color: transparent;
+    background: linear-gradient(90deg, $primary, $secondary);
+    background-clip: text;
+}
+
+
+/**
+ * Classes
+ * =================================
+ */
+.eyebrow {
+    font-family: $sans;
+    font-weight: 600;
+    @include gradient-text;
+}
+
+.headline {
+    font-family: $serif;
+    letter-spacing: 0.025em;
+    color: $headline-color
+}
+
+h1 {
+    font-size: $font-size-xxl;
+}
+h2 {
+    font-size: $font-size-xxl;
+}
+h3 {
+    font-size: $font-size-xl;
+}
+h5 {
+    font-size: $font-size-md;
+}
+h6 {
+    font-size: $font-size-md;
+}
+
+p {
+    font-family: $sans;
+    color: $foreground-color;
+    font-size: $font-size-sm;
+}

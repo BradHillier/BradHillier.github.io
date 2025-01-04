@@ -1,0 +1,51 @@
+@import '../../../styles/base/variables';
+
+
+.navigation {
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
+    width: 100%;
+    top: 0.75rem;
+    position: fixed;
+
+    nav {
+        display: flex;
+        backdrop-filter: blur(20px);
+        background-color: rgb(255 255 255 / 0.1);
+        border-color: $gray-border;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 9999px;
+        gap: 0.5rem;
+        padding: 0.125rem;
+        padding-left: 1rem;
+
+    }
+
+    .nav-item {
+        text-decoration: none;
+        border-radius: 9999px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 600;
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity));
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 500ms;
+    }
+
+    .white {
+        color: rgb(17 24 39 / var(--tw-text-opacity));
+        background-color: rgb(255 255 255 / 1);
+    }
+ }
