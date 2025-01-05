@@ -1,0 +1,9 @@
+@use 'src/styles/main' as *;
+
+.headline {
+    font-size: 2.7rem;
+
+    @include for-size(tablet-portrait-up) {
+        font-size: 3rem;
+    }
+}

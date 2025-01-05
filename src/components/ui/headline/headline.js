@@ -1,6 +1,8 @@
 import ScrollFadeUp from "./fade-in-on-scroll";
 import { Stack } from "react-bootstrap";
 
+import './headline.scss';
+
 
 const SectionHeadline = ({ eyebrow, headline }) => (
         <Stack gap={4}>
