@@ -20,16 +20,15 @@ const Hero = () => {
                         <div className="status">
                             <div className="status-light-glow" />
                             <div className="status-light" />
-                            <div>Available for new projects</div>
+                            <div>Available for new projects summer 2025</div>
                         </div>
                     </div>
                     <Stack gap={4} className="relative">
                         <h2 className="headline">
-                            Some fancy Hero Text here
+                            Hi, i'm Brad.
                         </h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam.
+                            I’m a software developer and a fourth-year computer science student. I’m passionate about solving complex problems, building meaningful solutions, and always excited to learn and grow.
                         </p>
                         <div className="button-wrapper">
                             <a href="#projects">
