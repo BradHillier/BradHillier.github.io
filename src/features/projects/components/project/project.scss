@@ -14,6 +14,7 @@
     @include rounded;
     @include flex-column;
 
+
     &::before {
         @include grain;
         @include rounded;
@@ -46,6 +47,14 @@
 
         section {
             margin-bottom: 4rem;
+        }
+    }
+
+    .headline {
+        font-size: 2.2rem;
+
+        @include for-size(tablet-portrait-up) {
+            font-size: 3rem;
         }
     }
 
