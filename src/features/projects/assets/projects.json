@@ -3,7 +3,7 @@
         "image": "crm_api.webp",
         "tags": ["Python", "Flask", "Postgres"],
         "title": "Rental Shop API",
-        "description": "A RESTful API implemented in Python using Flask — designed to efficiently manage and organize the customer and rental data of a small kayak outfitter.",
+        "description": "A RESTful API designed to efficiently manage and organize the customer and rental data of a small kayak outfitter.",
         "buttons": [
             {
                 "icon": ["fab", "github"],
@@ -18,10 +18,23 @@
         ]
     },
     {
+        "image": "class_cards.gif",
+        "tags": ["Javascript", "Python", "Flask", "mySQL"],
+        "title": "Class Cards",
+        "description": "A web app for collaborating with other students to curate and share flash cards for specific classes and subjects.",
+        "buttons": [
+            {
+                "icon": ["fab", "github"],
+                "label": "View Code",
+                "link": "https://github.com/BradHillier/CRM-API"
+            }
+        ]
+    },
+    {
         "image": "chess.gif",
         "tags": ["C++", "SDL2"],
         "title": "Pixel Chess",
-        "description": "A graphical Chess game designed and developed by a team of four as part of a semester long project. This application is written entirely in C++ and uses the SDL2 graphics library.",
+        "description": "A graphical chess game designed using object-oriented principles and a model-view-controller architecture.",
         "buttons": [
             {
                 "icon": ["fab", "github"], 
@@ -50,9 +63,9 @@
     },
     {
         "image": "reminders.gif",
-        "title": "Apple Reminders Clone",
+        "title": "Reminders Clone",
         "tags": ["HTML", "CSS", "Javascript", "React", "Redux"],
-        "description": "A web application emulating key features of iOS reminders built using React and Redux.",
+        "description": "A web application emulating the touch controls and gestures from the iOS reminders app.",
         "buttons": [
             {
                 "icon": ["fab", "github"], 
