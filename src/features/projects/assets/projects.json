@@ -39,30 +39,12 @@
         "image": "brick_breaker.gif",
         "tags": ["Python", "Pygame"],
         "title": "Brick Breaker",
-        "description": "A classic arcade game inspired by Atari's Breakout built using Python and Pygame. The game's goal is to destroy all the bricks on the screen by repeatedly bouncing a ball off a paddle and into them.",
+        "description": "A classic arcade game where players bounce a ball off a paddle to break bricks, featuring power-ups and challenging levels.",
         "buttons": [
             {
                 "icon": ["fab", "github"], 
                 "label": "View Code",
                 "link": "https://github.com/BradHillier/Brick-Breaker"
-            }
-        ]
-    },
-    {
-        "image": "deck_of_cards_cropped.gif",
-        "tags": ["HTML", "CSS", "Javascript", "React"],
-        "title": "Deck of Cards",
-        "description": "A classic arcade game inspired by Atari's Breakout built using Python and Pygame. The game's goal is to destroy all the bricks on the screen by repeatedly bouncing a ball off a paddle and into them.",
-        "buttons": [
-            {
-                "icon": ["fab", "github"], 
-                "label": "View Code",
-                "link": "https://github.com/BradHillier/Brick-Breaker"
-            },
-            {
-                "icon": ["fa", "play"], 
-                "label": "Try Demo",
-                "link": "https://bradhillier.ca/Deck-of-Cards"
             }
         ]
     },
