@@ -37,7 +37,7 @@ const Hero = () => {
                                     Explore my Work
                                 </button>
                             </a>
-                            <a href="#">
+                            <a href="mailto:bradhillier.dev@gmail.com">
                                 <button>
                                     &#128075; Let's Connect
                                 </button>
