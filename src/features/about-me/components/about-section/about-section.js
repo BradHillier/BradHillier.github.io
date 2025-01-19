@@ -1,8 +1,9 @@
-import { Image, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import SectionHeadline from '../../../../components/ui/headline/headline.js'
 import AboutCardHeader from '../about-card-header/about-card-header.js';
 import ToolboxItems from '../toolbox-items/toolbox-items.js';
 import Hobbies from '../hobbies/hobbies.js';
+import Map from '../map/map.js';
 import './about-section.scss';
 import toolbox from '../../assets/toolbox-items.json';
 
@@ -52,10 +53,7 @@ const AboutSection = () => (
             </div>
 
             <div className="card map-card">
-                <Image className="map" src="map.webp" alt="map" />
-                <div className="memoji-container">
-                    <Image src="memoji_smiling.webp" alt="smiling memoji" fluid/>
-                </div>
+                <Map />
             </div>
         </div>
 

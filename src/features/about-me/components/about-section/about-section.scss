@@ -4,6 +4,17 @@
  */
 
  @use 'src/styles/main' as *;
+ 
+ @keyframes ping { 
+    75%, 
+    100% { 
+        transform: scale(2); 
+        opacity: 0; 
+    } 
+}
+
+
+
 
 
  #about {
@@ -38,27 +49,5 @@
         @include card;
         padding: 0px;
         height: 320px;
-    }
-
-    .map-card {
-        position: relative;
-
-        .map {
-            @include center;
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-
-
-        .memoji-container {
-            @include circle(80px);
-            @include center;
-            @include gradient-background;
-
-            &::after {
-                @include outline("dark", "circle")
-            }
-        }
     }
  }
