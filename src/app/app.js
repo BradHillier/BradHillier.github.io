@@ -1,6 +1,7 @@
 import NavigationBar from '../components/layouts/navigation/navigation.js';
 import Hero from '../features/hero/components/hero/hero.js';
 import Projects from '../features/projects/components/projects-section/projects-section.js';
+import AboutSection from '../features/about-me/components/about-section/about-section.js'
 import Footer from '../components/layouts/footer/footer.js';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -17,6 +18,7 @@ const App = () => {
       <Hero />
       <main>
         <Projects />
+        <AboutSection />
       </main>
       <Footer />
     </div>

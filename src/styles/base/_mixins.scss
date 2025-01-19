@@ -31,20 +31,35 @@
     opacity: 5%;
 }
 
-@mixin offset-outline {
+@mixin outline($color: $gray-border, $radius: $border-radius) {
     content: '';
     z-index: 10;
     position: absolute;
-    outline: 2px solid $gray-border;
+    outline: 2px solid;
     outline-offset: -2px;
     border-radius: 20px;
     inset: 0;
     width: 100%;
     height: 100%;
+
+    @if $color == "dark" {
+        outline-color: $dark-gray-border;
+    } @else if $color == "light" {
+        outline-color: $gray-border;
+    } @else {
+        outline-color: $color;
+    }
+
+    @if $radius == "circle" {
+        border-radius: 50%;
+    } @else {
+        border-radius: $radius;
+    }
 }
 
+
 @mixin rounded {
-    border-radius: 20px;
+    border-radius: $border-radius;
     overflow: hidden;
 }
 
@@ -64,25 +79,66 @@
 @mixin flex-column {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
 }
 
 @mixin button-wrapper {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
-    margin-top: 1rem;
-
     @include for-size(tablet-portrait-up) {
         gap: 1rem;
     }
-
-    button {
+    a {
         flex-grow: 1;
-        border-radius: 1rem;
 
         @include for-size(tablet-landscape-up) {
             flex-grow: 0
         }
+    }
+    button {
+        width: 100%;
+        flex-grow: 1;
+        border-radius: 1rem;
+
+    }
+}
+
+@mixin card {
+    @include rounded;
+    &::before {
+        @include grain;
+        @include rounded;
+        pointer-events: none;
+    }
+
+    &::after {
+        @include outline;
+        pointer-events: none;
+    }
+    background-color: $light-background-color; //(in srgb, $background-color, white 10%); 
+    padding: 2rem;          // should be a variable
+}
+
+@mixin gradient-background {
+    background: linear-gradient(90deg, $primary, $secondary);
+}
+
+@mixin edge-gradient($color: $background-color, $width: 20px) {
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        width: 2em;
+        height: 100%;
+    }
+    &::before {
+        left: 0;
+        background-image: linear-gradient(to left, rgba(255,255,255,0), $color 90%);
+    }
+    &::after {
+        right: 0;
+        background-image: linear-gradient(to right, rgba(255,255,255,0), $color 90%);
+
     }
 }

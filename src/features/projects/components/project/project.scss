@@ -11,23 +11,9 @@
  *
  */
 .project {
-    @include rounded;
+    @include card;
     @include flex-column;
-
-
-    &::before {
-        @include grain;
-        @include rounded;
-        pointer-events: none;
-    }
-
-    &::after {
-        @include offset-outline;
-        pointer-events: none;
-    }
-
-    background-color: color-mix(in srgb, $background-color, white 10%); 
-    padding: 2rem;          // should be a variable
+    gap: 2rem;
     padding-bottom: 0 !important;
 
     @include for-size(tablet-portrait-up) {
@@ -50,26 +36,19 @@
         }
     }
 
-    .headline {
-        font-size: 2.2rem;
-
-        @include for-size(tablet-portrait-up) {
-            font-size: 3rem;
-        }
-    }
-
     /**
     *
     */
     section {
         @include flex-column;
-        margin-bottom: 2rem;
 
         hr {
-            border-top: 1px solid $gray-border;
+            border-top: 2px solid $gray-border;
             margin: 0.5rem 0rem;
         }
-
+        p {
+            margin-bottom: 1.5rem;
+        }
         footer {
             @include button-wrapper;
         }

@@ -1,0 +1,46 @@
+[
+    [
+        {
+            "title": "C++",
+            "icon": "devicon-cplusplus-plain"
+        },
+        {
+            "title": "Python",
+            "icon": "devicon-python-plain"
+        },
+        {
+            "title": "Flask",
+            "icon": "devicon-flask-plain"
+        },
+        {
+            "title": "Swift",
+            "icon": "devicon-swift-plain"
+        },
+        {
+            "title": "macOS",
+            "icon": "devicon-apple-plain"
+        }
+    ],
+    [
+        {
+            "title": "Javascript",
+            "icon": "devicon-javascript-plain"
+        },
+        {
+            "title": "HTML",
+            "icon": "devicon-html5-plain"
+        },
+        {
+            "title": "CSS",
+            "icon": "devicon-css3-plain"
+        },
+        {
+            "title": "React",
+            "icon": "devicon-react-plain"
+        },
+        {
+            "title": "Postgres",
+            "icon": "devicon-postgresql-plain"
+        }
+    ]
+]

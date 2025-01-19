@@ -4,11 +4,13 @@
 .button-base {
     padding: $spacer-xs $spacer-xs;
 
-    font-size: $font-size-sm;
+    font-size: $font-size-xs;
     font-weight: 600;
 
     border: 2px solid $gray-border;
     border-radius: $spacer-xs;
+
+    font-size: $font-size-xs;
 }
 
 button {

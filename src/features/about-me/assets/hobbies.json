@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Rock Climbing",
+        "emoji": "🧗‍♂️",
+        "left": "5%",
+        "top": "5%"
+    },
+    {
+        "title": "Kayaking",
+        "emoji": "🛶",
+        "left": "60%",
+        "top": "5%"
+    },
+    {
+        "title": "Skiing",
+        "emoji": "⛷️",
+        "left": "40%",
+        "top": "40%"
+    },
+    {
+        "title": "Hiking",
+        "emoji": "🥾",
+        "left": "10%",
+        "top": "35%"
+    },
+    {
+        "title": "Music",
+        "emoji": "🎵",
+        "left": "70%",
+        "top": "45%"
+    },
+    {
+        "title": "Cooking",
+        "emoji": "🍳",
+        "left": "5%",
+        "top": "65%"
+    },
+    {
+        "title": "Fitness",
+        "emoji": "🏋🏻‍♀️",
+        "left": "50%",
+        "top": "70%"
+    }
+]

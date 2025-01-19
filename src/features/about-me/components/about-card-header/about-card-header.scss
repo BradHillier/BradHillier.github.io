@@ -1,0 +1,30 @@
+ @use 'src/styles/main' as *;
+
+
+ .about-card-header {
+
+    $padding: 24px;
+
+    // Headline font should be sized in typography.scss
+    .headline {
+        padding-top: $padding;
+
+        .star {
+            color: $primary;
+            height: $font-size-lg + 0.5;
+            padding-left: 5px;
+            padding-right: 11px;
+        }
+    }
+
+    .headline, p {
+        padding-left: $padding;
+        padding-right: $padding;
+    }
+
+    p {
+        letter-spacing: 0.02em;
+        padding-left: $padding + 1;
+        padding-right: $padding + 1;
+    }
+ }

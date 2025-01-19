@@ -8,8 +8,7 @@
  *      - headline
  */
 
-@use '../base/variables' as *;
-
+@use '../base/mixins' as *;
 
 
 /**
@@ -24,10 +23,52 @@
 }
 
 
+
+
+h1 {
+    font-size: $font-size-xxl;
+}
+
+h2 {
+    font-size: $font-size-xl;
+    @include for-size(tablet-portrait-up) {
+        font-size: $font-size-xxxl;
+    }
+}
+
+h3 {
+    font-size: $font-size-xl;
+    @include for-size(tablet-portrait-up) {
+        font-size: $font-size-xxl;
+    }
+}
+
+h5 {
+    font-size: $font-size-md;
+}
+
+h6 {
+    font-size: 0.95rem;;
+    @include for-size(tablet-portrait-up) {
+        font-size: 1.25rem;
+    }
+}
+
+p {
+    font-family: $sans;
+    color: $foreground-color;
+    font-size: $font-size-xs;
+
+    @include for-size(tablet-portrait-up) {
+        font-size: $font-size-sm;
+    }
+}
+
 /**
  * Classes
  * =================================
  */
+
 .eyebrow {
     font-family: $sans;
     font-weight: 600;
@@ -36,28 +77,10 @@
 
 .headline {
     font-family: $serif;
-    letter-spacing: 0.025em;
+    letter-spacing: 0.03em;
     color: $headline-color
 }
 
-h1 {
-    font-size: $font-size-xxl;
-}
-h2 {
-    font-size: $font-size-xxl;
-}
-h3 {
-    font-size: $font-size-xl;
-}
-h5 {
-    font-size: $font-size-md;
-}
-h6 {
-    font-size: $font-size-md;
-}
-
-p {
-    font-family: $sans;
-    color: $foreground-color;
-    font-size: $font-size-sm;
+.section-header {
+    margin-bottom: 4rem;
 }

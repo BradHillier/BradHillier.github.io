@@ -1,0 +1,11 @@
+@use 'src/styles/main' as *;
+
+.flex-container {
+
+    .card-container {
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 80px;
+    }
+}
