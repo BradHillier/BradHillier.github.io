@@ -78,18 +78,5 @@
                 "link": "https://bradhillier.ca/Apple-Reminders-Clone"
             }
         ]
-    },
-    {
-        "image": "tictactoe.gif",
-        "tags": ["Swift", "SwiftUI"],
-        "title": "Gomoku",
-        "description": "A Tic-Tac-Toe variant developed in Swift utilizing SwiftUI. The app is built with an MVVM architecture and includes an AI oppenent powered by a Minimax adversarial search algorithm. Thanks to Swift's protocol-oriented programming style, the app is highly modular.",
-        "buttons": [
-            {
-                "icon": ["fab", "github"], 
-                "label": "View Code",
-                "link": "https://github.com/BradHillier/Apple-Reminders-Clone"
-            }
-        ]
     }
 ]
