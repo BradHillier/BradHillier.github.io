@@ -23,8 +23,8 @@ const AboutSection = () => (
 
             <div className="card book-card">
                 <AboutCardHeader
-                    title="My Journey"
-                    description=""
+                    title="My Story"
+                    description="I used to work in the adventure tourism industry as a kayak guide and ski instructor. I fell in love with programming when I taugh myself how to code to update my employer's website"
                 />
             </div>
 
@@ -33,9 +33,14 @@ const AboutSection = () => (
                     title="My Toolbox"
                     description=" Explore the technologies and tools I use to craft exceptional digital experiences."
                 />
-                {toolbox.map(toolboxItems => (
-                    <ToolboxItems items={toolboxItems} />
-                ))}
+                <ToolboxItems items={toolbox[0]} 
+                    duration={30} 
+                    direction={"normal"}
+                />
+                <ToolboxItems items={toolbox[1]}
+                    duration={15} 
+                    direction={"reverse"}
+                />
             </div>
 
             <div className="card hobby-card">

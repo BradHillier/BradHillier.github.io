@@ -1,37 +1,40 @@
  @use 'src/styles/main' as *;
 
+ @keyframes scroll {
+    0% { transform: translateX(0%)}
+    100% { transform: translateX(-50%)}
+ }
+
 
 .toolbox-container {
     @include edge-gradient($light-background-color, 2em);
     display: flex;
-    overflow: scroll;
-    scrollbar-width: none;
-    flex: none;
 
-    &::-webkit-scrollbar { 
-        display: none;  /* Safari and Chrome */
-    }
+    .scroll-container {
+        display: flex;
+        flex: none;
+        animation: scroll linear infinite;
 
-    .toolbox-item {
-        display: inline-flex;
-        align-items: center;
-        align-items: center;
-        gap: 16px;
-        padding: 6px 12px; 
-        margin: 12px;
+        .toolbox-item {
+            display: inline-flex;
+            align-items: center;
+            align-items: center;
+            gap: 16px;
+            padding: 6px 12px; 
+            margin: 12px;
 
-        /* should be shared with the card outline */
-        outline: 2px solid $gray-border;
-        border-radius: 10px;
+            /* should be shared with the card outline */
+            outline: 2px solid $gray-border;
+            border-radius: 10px;
 
-        i { 
-            @include gradient-text; 
-            font-size: 2.5rem;
+            i { 
+                @include gradient-text; 
+                font-size: 2.5rem;
+            }
+            span {
+                color: white;
+                font-weight: semibold;
+            }
         }
-        span {
-            color: white;
-            font-weight: semibold;
-        }
-
     }
 }
