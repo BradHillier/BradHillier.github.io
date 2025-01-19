@@ -26,7 +26,10 @@
 
 
 h1 {
-    font-size: $font-size-xxl;
+    font-size: 1.9rem;
+    @include for-size(tablet-portrait-up) {
+        font-size: $font-size-xxxl;
+    }
 }
 
 h2 {
@@ -83,4 +86,8 @@ p {
 
 .section-header {
     margin-bottom: 4rem;
+}
+
+.informative {
+    font-size: 18px;
 }

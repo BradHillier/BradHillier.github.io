@@ -23,22 +23,22 @@ const Hero = () => {
                             <div>Available for new projects summer 2025</div>
                         </div>
                     </div>
-                    <Stack gap={4} className="relative">
-                        <h2 className="headline">
-                            Hi, i'm Brad.
-                        </h2>
-                        <p>
-                            I’m a software developer and a fourth-year computer science student. I’m passionate about solving complex problems, building meaningful solutions, and always excited to learn and grow.
+                    <Stack gap={2} className="relative">
+                        <h1 className="headline">
+                            Hello World, I'm Brad.
+                        </h1>
+                        <p className="informative">
+                            I’m a software developer and a fourth-year computer science student. I’m passionate about creating meaningful solutions to complex problems.
                         </p>
                         <div className="button-wrapper">
                             <a href="#projects">
                                 <button className="outline-button">
-                                    Explore my Work
+                                    Explore My Work  &nbsp;↓
                                 </button>
                             </a>
                             <a href="mailto:bradhillier.dev@gmail.com">
                                 <button>
-                                    &#128075; Let's Connect
+                                    &#128075; &nbsp;Let's Connect
                                 </button>
                             </a>
                         </div>
