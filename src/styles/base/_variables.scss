@@ -15,6 +15,13 @@ $dark-gray-border: rgb(3 7 18 / 0.3);
 $background-color: rgb(18, 24, 38);
 $light-background-color: rgb(31 41 55);//color-mix(in srgb, $background-color, white 10%); 
 
+$navbar-opacity: 0.1;
+$navbar-color: rgb(
+    max(0, min(255, (red($light-background-color) - red($background-color)) / $navbar-opacity)),
+    max(0, min(255, (green($light-background-color) - green($background-color)) / $navbar-opacity)),
+    max(0, min(255, (blue($light-background-color) - blue($background-color)) / $navbar-opacity))
+);
+
 $border-radius: 24px;
 
 
