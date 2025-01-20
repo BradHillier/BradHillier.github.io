@@ -81,27 +81,33 @@
     flex-direction: column;
 }
 
+
 @mixin button-wrapper {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
+
+    button {
+        width: 100%;
+        flex-grow: 1;
+
+    }
+
     @include for-size(tablet-portrait-up) {
         gap: 1rem;
+        button {
+            padding: 10px 24px;
+        }
     }
     a {
         flex-grow: 1;
 
-        @include for-size(tablet-landscape-up) {
+        @include for-size(tablet-portrait-up) {
             flex-grow: 0
         }
     }
-    button {
-        width: 100%;
-        flex-grow: 1;
-        border-radius: 1rem;
-
-    }
 }
+
 
 @mixin card {
     @include rounded;
