@@ -2,6 +2,7 @@ import NavigationBar from '../components/layouts/navigation/navigation.js';
 import Hero from '../features/hero/components/hero/hero.js';
 import Projects from '../features/projects/components/projects-section/projects-section.js';
 import AboutSection from '../features/about-me/components/about-section/about-section.js'
+import ContactSection from '../features/call-to-action/components/call-to-action.scss/call-to-action.js';
 import Footer from '../components/layouts/footer/footer.js';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -16,10 +17,9 @@ const App = () => {
     <div className="App">
       <NavigationBar />
       <Hero />
-      <main>
-        <Projects />
-        <AboutSection />
-      </main>
+      <Projects />
+      <AboutSection />
+      <ContactSection />
       <Footer />
     </div>
   );

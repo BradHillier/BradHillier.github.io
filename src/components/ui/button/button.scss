@@ -5,7 +5,7 @@
     z-index: 1000;
     padding: $spacer-xs 24px;
 
-    font-size: 16px !important;
+    font-size: 16px;
     letter-spacing: 0.6px;
     font-weight: 500;
 
@@ -26,4 +26,10 @@ button {
     @extend .button-base;
     color: white;
     background-color: $background-color;
+}
+
+.dark-button {
+    color: white;
+    background-color: $dark-text;
+    border: none;
 }
