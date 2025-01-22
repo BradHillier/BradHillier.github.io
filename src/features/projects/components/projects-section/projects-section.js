@@ -3,8 +3,12 @@ import { Project } from '../project/project.js';
 import projects from '../../assets/projects.json';
 //import Rolodex from '../rolodex/rolodex.js';
 import { Container } from 'react-bootstrap';
+import { scrollYProgress, useScroll } from 'framer-motion';
+import Card from '../sticky-scroller/sticky-scroller.js';
+import { useRef, useEffect } from 'react';
 
-import './projects-section.scss';
+
+//import './projects-section.scss';
 
 
 //const Projects = () => (
@@ -30,24 +34,37 @@ import './projects-section.scss';
 //    </section>
 //);
 
-const Projects = () => (
-    <section id="projects" className="my-5 py-4">
-        <Container>
-            <SectionHeadline className="section-header"
-                eyebrow="SEE WHAT I'M WORKING ON"
-                headline="Personal Projects"
-            />
-            <div className="flex-container">
-                {projects.map(project => 
-                <div>
-                <div className="card-container">
-                    <Project key={project.title} {...project} />
-                    </div>
-                    </div>
-                )}
-            </div>
-        </Container>
-    </section>
-);
+const Projects = () => {
+
+    const container = useRef(null);
+    const { scrollYProgress } = useScroll({
+      target: container,
+      offset: ['start start', 'end end']
+    })
+
+    return (
+        <section id="projects" className="my-5 py-4">
+            <Container>
+                <SectionHeadline className="section-header"
+                    eyebrow="SEE WHAT I'M WORKING ON"
+                    headline="Personal Projects"
+                />
+                <div ref={container}>
+                    {projects.map((project, i) => {
+                        const targetScale = 1 - ( (projects.length - i - 1) * 0.05);
+
+                        return (
+                            <Card key={`p_${i}`} i={i} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale}>
+                                <div className="card-container">
+                                    <Project key={project.title} {...project} />
+                                </div>
+                            </Card>
+                        )
+                    })}
+                </div>
+            </Container>
+        </section>
+    )
+};
 
 export default Projects;

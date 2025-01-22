@@ -1,0 +1,26 @@
+@use 'src/styles/main' as *;
+
+
+.card-container{
+    height: 80vh;
+    display: flex;
+    position: sticky;
+    top: 95px;
+    width: 100%;
+    @include for-size(tablet-portrait-up) {
+      top: 140px;
+    }
+
+    .card{
+      height: 0px;
+      width: 100%;
+      transform-origin: top;
+      background-color: transparent;
+    }
+
+    button {
+        display: inline-flex;
+        align-items: center;
+        
+    }
+  }
