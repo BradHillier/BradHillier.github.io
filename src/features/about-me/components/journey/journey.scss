@@ -1,0 +1,33 @@
+@use 'src/styles/main' as *;
+
+
+.timeline-box {
+    width: 320px;
+    height: 320px;
+    padding-left: 24px;
+    border-radius: 8px;
+    
+    .timeline {
+        position: relative;
+        padding-left: 20px;
+        border-left: 2px solid $primary;
+
+        .role {
+            margin-bottom: 20px;
+            position: relative;
+
+            .year {
+                font-weight: bold;
+                @include gradient-text;
+            }
+
+            .title {
+                margin-left: 10px;
+                font-size: 0.9em;
+                color: $foreground-color;
+            }
+        }
+    }
+}
+
+

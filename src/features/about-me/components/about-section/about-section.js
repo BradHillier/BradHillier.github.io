@@ -4,6 +4,7 @@ import AboutCardHeader from '../about-card-header/about-card-header.js';
 import ToolboxItems from '../toolbox-items/toolbox-items.js';
 import Hobbies from '../hobbies/hobbies.js';
 import Map from '../map/map.js';
+import Journey from '../journey/journey.js';
 import './about-section.scss';
 import toolbox from '../../assets/toolbox-items.json';
 
@@ -24,9 +25,10 @@ const AboutSection = () => (
 
             <div className="card book-card">
                 <AboutCardHeader
-                    title="My Story"
-                    description="I used to work in the adventure tourism industry as a kayak guide and ski instructor. I fell in love with programming when I taugh myself how to code to update my employer's website"
+                    title="My Journey"
+                    description=""
                 />
+                <Journey />
             </div>
 
             <div className="card toolbox-card">
